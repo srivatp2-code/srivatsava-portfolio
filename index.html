@@ -7,312 +7,204 @@
       name="description"
       content="Portfolio for Srivatsava Pusarla, Senior Product Manager leading product strategy, regulated FinTech platforms, and applied AI systems."
     />
-    <title>Srivatsava Pusarla | Senior Product Manager</title>
+    <title>Srivatsava Pusarla | Product Systems Explorer</title>
     <link rel="preload" href="assets/portrait.png" as="image" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <canvas id="signal-field" aria-hidden="true"></canvas>
+    <canvas id="cosmos" aria-hidden="true"></canvas>
+    <div class="grain" aria-hidden="true"></div>
     <div class="cursor-dot" aria-hidden="true"></div>
     <div class="cursor-ring" aria-hidden="true"></div>
-    <div class="scroll-progress" aria-hidden="true"><span></span></div>
-    <div class="scanline" aria-hidden="true"></div>
+    <div class="progress" aria-hidden="true"><span></span></div>
 
-    <header class="topbar">
+    <header class="nav-shell">
       <a class="brand" href="#top" aria-label="Srivatsava Pusarla home">
-        <span class="brand-mark">SP</span>
-        <span>Srivatsava Pusarla</span>
+        <span>SP</span>
+        Srivatsava
       </a>
       <nav aria-label="Portfolio sections">
-        <a href="#impact">Impact</a>
-        <a href="#systems">Systems</a>
-        <a href="#timeline">Trajectory</a>
+        <a href="#work">Work</a>
+        <a href="#mix">Mix</a>
+        <a href="#timeline">Timeline</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a class="resume-link" href="assets/Srivatsava-Pusarla-Resume.pdf" download>Resume</a>
+      <a class="nav-cta" href="assets/Srivatsava-Pusarla-Resume.pdf" download>Resume</a>
     </header>
 
-    <aside class="command-dock" aria-label="Quick recruiter actions">
-      <button type="button" data-jump="#systems">
-        <span>01</span>
-        Product proof
-      </button>
-      <button type="button" data-jump="#balance">
-        <span>02</span>
-        Skill mix
-      </button>
-      <button type="button" id="brief-toggle">
-        <span>03</span>
-        Recruiter brief
-      </button>
-    </aside>
-
-    <section class="brief-panel" id="brief-panel" aria-label="Recruiter brief" aria-hidden="true">
-      <button class="brief-close" type="button" aria-label="Close recruiter brief">Close</button>
-      <p class="section-kicker">Recruiter brief</p>
-      <h2>Product-first PM with FinTech scale and AI fluency.</h2>
-      <div class="brief-grid">
-        <article>
-          <span>50%</span>
-          <strong>Product management</strong>
-          <p>Roadmaps, PRDs, GTM, discovery, stakeholder alignment, platform/API requirements.</p>
-        </article>
-        <article>
-          <span>25%</span>
-          <strong>FinTech</strong>
-          <p>BNPL, credit, repayments, investor workflows, asset sales, regulated launch paths.</p>
-        </article>
-        <article>
-          <span>25%</span>
-          <strong>Applied AI</strong>
-          <p>RAG, evals, guardrails, support automation, model-selection tradeoffs.</p>
-        </article>
-      </div>
-      <a class="button primary magnetic" href="mailto:srivatp1@umbc.edu">Start a conversation</a>
-    </section>
-
     <main id="top">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-copy" data-reveal>
-          <p class="eyebrow">Senior Product Manager / FinTech / Applied AI</p>
-          <h1 id="hero-title">
-            Building products that turn complexity into market-ready platforms.
-          </h1>
-          <p class="hero-text">
-            8+ years leading product strategy, roadmap execution, API platforms, regulated credit
-            launches, and AI-enabled workflows. I align customers, engineering, compliance, and
-            capital partners around products that ship.
+      <section class="scene hero-scene" aria-labelledby="hero-title">
+        <div class="blue-atmosphere" aria-hidden="true"></div>
+        <div class="orbit-line line-one" aria-hidden="true"></div>
+        <div class="orbit-line line-two" aria-hidden="true"></div>
+        <div class="sphere sphere-left" aria-hidden="true"></div>
+        <div class="sphere sphere-right" aria-hidden="true"></div>
+        <div class="sphere sphere-bottom" aria-hidden="true"></div>
+
+        <div class="hero-content" data-reveal>
+          <p class="eyebrow">Product Management / FinTech / Applied AI</p>
+          <h1 id="hero-title">The Product Systems Explorer</h1>
+          <p>
+            I build market-ready products from regulated complexity: credit launches, API platforms,
+            investor workflows, and AI-assisted operating systems.
           </p>
-          <div class="hero-actions" aria-label="Primary actions">
-            <a class="button primary magnetic" href="mailto:srivatp1@umbc.edu">Talk to me</a>
-            <a class="button secondary magnetic" href="#systems">View work</a>
-            <button class="button secondary magnetic" type="button" id="hero-brief-toggle">Open brief</button>
-          </div>
-          <div class="role-strip" aria-label="Core product strengths">
-            <span>Product strategy</span>
-            <span>Roadmap execution</span>
-            <span>API platforms</span>
-            <span>Credit launches</span>
+          <div class="hero-actions">
+            <a class="pill-button dark magnetic" href="#work">Explore work</a>
+            <a class="pill-button light magnetic" href="mailto:srivatp1@umbc.edu">Contact</a>
           </div>
         </div>
 
-        <div class="hero-visual" data-reveal>
-          <div class="portrait-stage">
-            <div class="portrait-frame">
-              <img src="assets/portrait.png" alt="Portrait of Srivatsava Pusarla" />
-            </div>
-            <div class="hud hud-top">
-              <span>Product execution</span>
-              <strong>8 market launches</strong>
-            </div>
-            <div class="hud hud-mid">
-              <span>FinTech scale</span>
-              <strong>$60B asset sales</strong>
-            </div>
-            <div class="hud hud-bottom">
-              <span>AI leverage</span>
-              <strong>80% review target</strong>
-            </div>
-            <div class="orbit-card orbit-one">Discovery</div>
-            <div class="orbit-card orbit-two">Roadmap</div>
-            <div class="orbit-card orbit-three">GTM</div>
+        <aside class="profile-orb" data-reveal aria-label="Profile summary">
+          <img src="assets/portrait.png" alt="Portrait of Srivatsava Pusarla" />
+          <div>
+            <span>Senior Product Manager</span>
+            <strong>8+ years shipping through ambiguity</strong>
+          </div>
+        </aside>
+      </section>
+
+      <section class="scene era-scene" aria-labelledby="era-title">
+        <div class="mega-sphere" aria-hidden="true"></div>
+        <div class="center-copy" data-reveal>
+          <span class="outline-pill">Srivatsava.co</span>
+          <h2 id="era-title">Enter a new era of product leadership</h2>
+          <p>
+            The best PM work is invisible until the launch happens: strategy clarified, teams aligned,
+            risk contained, and customers reached.
+          </p>
+        </div>
+      </section>
+
+      <section class="scene board-scene" id="work" aria-labelledby="board-title">
+        <div class="floating-board" data-reveal aria-hidden="true">
+          <div class="window-dots"><span></span><span></span><span></span></div>
+          <div class="board-avatar">
+            <img src="assets/portrait.png" alt="" />
+          </div>
+          <p>Srivatsava Pusarla</p>
+          <strong>Product portfolio</strong>
+          <div class="asset-grid">
+            <span class="asset tile-pink">PRD</span>
+            <span class="asset tile-mint">GTM</span>
+            <span class="asset tile-violet">API</span>
+            <span class="asset tile-lime">KPI</span>
+            <span class="asset tile-blue">SQL</span>
+            <span class="asset tile-orange">AI</span>
           </div>
         </div>
-      </section>
-
-      <section class="metrics" id="impact" aria-label="Selected impact metrics">
-        <article data-reveal>
-          <span class="metric-number" data-count="25" data-prefix="$" data-suffix="B">0</span>
-          <p>TPV contribution from credit products launched through product discovery and market execution.</p>
-        </article>
-        <article data-reveal>
-          <span class="metric-number" data-count="60" data-prefix="$" data-suffix="B">0</span>
-          <p>Asset-externalization platform volume enabled through roadmap, API, and investor workflows.</p>
-        </article>
-        <article data-reveal>
-          <span class="metric-number" data-count="3" data-suffix="mo">0</span>
-          <p>Investor onboarding compressed to 2-3 months from a roughly six-month cycle.</p>
-        </article>
-        <article data-reveal>
-          <span class="metric-number" data-count="25" data-suffix="+">0</span>
-          <p>Engineers coordinated across two teams through prioritization, specs, and stakeholder alignment.</p>
-        </article>
-      </section>
-
-      <section class="balance" id="balance" aria-labelledby="balance-title">
-        <div class="section-heading" data-reveal>
-          <p class="section-kicker">Operating mix</p>
-          <h2 id="balance-title">A balanced PM signal, not an AI-only story.</h2>
-        </div>
-        <div class="mix-grid">
-          <article class="mix-card product" data-reveal>
-            <span class="mix-number">50%</span>
-            <h3>Product management</h3>
-            <p>Strategy, discovery, PRDs, roadmaps, launch sequencing, stakeholder alignment, KPIs, and GTM.</p>
-            <div class="mix-bar"><span style="--value: 50%"></span></div>
-          </article>
-          <article class="mix-card fintech" data-reveal>
-            <span class="mix-number">25%</span>
-            <h3>FinTech depth</h3>
-            <p>Credit, BNPL, repayments, investor contracts, asset externalization, and regulated market launch.</p>
-            <div class="mix-bar"><span style="--value: 25%"></span></div>
-          </article>
-          <article class="mix-card ai" data-reveal>
-            <span class="mix-number">25%</span>
-            <h3>Applied AI leverage</h3>
-            <p>RAG workflows, eval harnesses, guardrails, support automation, and model tradeoff decisions.</p>
-            <div class="mix-bar"><span style="--value: 25%"></span></div>
-          </article>
+        <div class="split-copy" data-reveal>
+          <p class="muted-label">Digital product assets</p>
+          <h2 id="board-title">Profile Board</h2>
+          <p>
+            A product leader who can move between discovery, roadmap, engineering execution, legal
+            review, capital-market partner workflows, and launch readiness without losing the thread.
+          </p>
         </div>
       </section>
 
-      <section class="story-band" aria-labelledby="story-title">
-        <div class="section-kicker" data-reveal>Product thesis</div>
-        <h2 id="story-title" data-reveal>Great products make hard systems feel operationally simple.</h2>
-        <p data-reveal>
-          My work sits across product strategy, customer discovery, credit economics, platform APIs,
-          compliance operations, and AI-assisted workflows. The pattern is consistent: define the
-          operating model, build the roadmap, align the teams, and ship into regulated markets.
-        </p>
-      </section>
-
-      <section class="systems" id="systems" aria-labelledby="systems-title">
-        <div class="section-heading" data-reveal>
-          <p class="section-kicker">Selected product work</p>
-          <h2 id="systems-title">Strategy, platforms, launches, then AI.</h2>
-        </div>
-        <div class="system-grid">
-          <article class="system-card featured" data-reveal>
-            <span class="tag">Product Leadership / Credit Growth</span>
-            <h3>BNPL and Pay Monthly market launches</h3>
-            <p>
-              Launched Pay Later 2 GO in the US, Germany, and Italy, plus Pay Monthly in France,
-              Italy, Spain, Austria, and Australia. Used customer-data analysis to identify underserved
-              borrower cohorts and helped contribute to roughly $25B TPV and 20% customer-base growth.
-            </p>
-            <div class="system-flow" aria-label="System pipeline">
-              <span>Discovery</span>
-              <span>Roadmap</span>
-              <span>Specs</span>
-              <span>GTM</span>
-              <span>Launch</span>
-            </div>
-          </article>
-          <article class="system-card" data-reveal>
-            <span class="tag">Platform / Capital Markets</span>
-            <h3>Asset externalization platform</h3>
-            <p>
-              Roadmap owner for the platform enabling roughly $60B in BNPL and revolving-credit asset
-              sales, with investor data contracts, API requirements, and multi-investor workflows.
-            </p>
-          </article>
-          <article class="system-card" data-reveal>
-            <span class="tag">Product Ops / Execution</span>
-            <h3>Investor onboarding redesign</h3>
-            <p>
-              Redesigned onboarding for asset-sale funding partners, compressing the path from roughly
-              six months to 2-3 months and accelerating securitization readiness for new investors.
-            </p>
-          </article>
-          <article class="system-card" data-reveal>
-            <span class="tag">Applied AI / Compliance</span>
-            <h3>Regulatory content platform</h3>
-            <p>
-              Built a Claude-powered RAG prototype with eval harnesses, deterministic compliance checks,
-              and human-in-the-loop legal review to reduce a 16-week regulated launch bottleneck.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="intelligence" aria-labelledby="intelligence-title">
-        <div class="section-heading" data-reveal>
-          <p class="section-kicker">Product operating range</p>
-          <h2 id="intelligence-title">50% product, 25% FinTech, 25% AI.</h2>
-        </div>
-        <div class="lab">
-          <div class="lab-panel" data-reveal>
-            <h3>Product management core</h3>
-            <p>
-              Strategy, roadmapping, discovery, PRDs, A/B testing, KPIs and OKRs, stakeholder alignment,
-              Agile execution, GTM, platform requirements, and cross-functional decision-making.
-            </p>
-          </div>
-          <div class="lab-panel" data-reveal>
-            <h3>FinTech and AI edge</h3>
-            <p>
-              Credit, BNPL, repayments, asset sales, investor data contracts, RAG systems, eval design,
-              AI guardrails, model selection, and practical LLM workflows for regulated teams.
-            </p>
+      <section class="scene impact-scene" aria-labelledby="impact-title">
+        <div class="impact-copy" data-reveal>
+          <p class="muted-label">See the proof</p>
+          <h2 id="impact-title">Launch Timeline</h2>
+          <p>Product outcomes across PayPal, Sezzle, Nokia R&D, NewDay USA, and TCS.</p>
+          <div class="impact-grid">
+            <article>
+              <strong>$25B</strong>
+              <span>TPV contribution from BNPL and Pay Monthly launches</span>
+            </article>
+            <article>
+              <strong>$60B</strong>
+              <span>Asset sales enabled through platform and investor workflows</span>
+            </article>
+            <article>
+              <strong>8</strong>
+              <span>Credit markets launched across the US, Europe, and Australia</span>
+            </article>
+            <article>
+              <strong>2-3mo</strong>
+              <span>Investor onboarding after redesigning the operating path</span>
+            </article>
           </div>
         </div>
+        <div class="trade-card-stack" data-reveal aria-hidden="true">
+          <article class="glass-card card-main">
+            <span>PayPal / Credit</span>
+            <div class="purple-planet"></div>
+            <h3>$60B Platform</h3>
+          </article>
+          <article class="glass-card card-trade">
+            <span>Product execution</span>
+            <h3>$25B TPV</h3>
+            <p>BNPL → Pay Monthly</p>
+          </article>
+        </div>
       </section>
 
-      <section class="timeline-section" id="timeline" aria-labelledby="timeline-title">
-        <div class="section-heading" data-reveal>
-          <p class="section-kicker">Trajectory</p>
-          <h2 id="timeline-title">From systems engineering to product leadership.</h2>
+      <section class="scene mix-scene" id="mix" aria-labelledby="mix-title">
+        <div class="mix-copy" data-reveal>
+          <p class="muted-label">Operating signal</p>
+          <h2 id="mix-title">50 / 25 / 25</h2>
+          <p>
+            Balanced for recruiters: product management is the core, FinTech is the domain, AI is the
+            multiplier.
+          </p>
         </div>
-        <ol class="timeline">
-          <li data-reveal>
-            <time>2022 - Now</time>
-            <div>
-              <h3>Senior Product Manager, PayPal</h3>
-              <p>Roadmaps, launches, APIs, credit platforms, asset externalization, repayments, and AI-enabled operations.</p>
-            </div>
-          </li>
-          <li data-reveal>
-            <time>2021 - 2022</time>
-            <div>
-              <h3>Product Manager I, Sezzle</h3>
-              <p>Customer research and API integration for third-party lender connectivity.</p>
-            </div>
-          </li>
-          <li data-reveal>
-            <time>2021</time>
-            <div>
-              <h3>NewDay USA and Nokia R&amp;D</h3>
-              <p>Product specs, launch strategy, and computer-vision asset localization.</p>
-            </div>
-          </li>
-          <li data-reveal>
-            <time>2016 - 2019</time>
-            <div>
-              <h3>Systems Engineer, Tata Consultancy Services</h3>
-              <p>Product analysis and RESTful APIs validating migration of 80M insurance policies.</p>
-            </div>
-          </li>
+        <div class="mix-orbit" data-reveal>
+          <article class="mix-node product">
+            <span>50%</span>
+            <strong>Product</strong>
+            <p>Strategy, discovery, PRDs, GTM, stakeholder alignment</p>
+          </article>
+          <article class="mix-node fintech">
+            <span>25%</span>
+            <strong>FinTech</strong>
+            <p>Credit, BNPL, repayments, investor data contracts</p>
+          </article>
+          <article class="mix-node ai">
+            <span>25%</span>
+            <strong>AI</strong>
+            <p>RAG, evals, guardrails, support automation</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="scene timeline-scene" id="timeline" aria-labelledby="timeline-title">
+        <div class="split-copy" data-reveal>
+          <p class="muted-label">Product trajectory</p>
+          <h2 id="timeline-title">System to strategy</h2>
+          <p>
+            From validating migration APIs for 80M policies to owning roadmaps for PayPal credit,
+            repayments, acquisitions, and asset externalization.
+          </p>
+        </div>
+        <ol class="timeline-list" data-reveal>
+          <li><span>2022 - Now</span><strong>Senior Product Manager, PayPal</strong></li>
+          <li><span>2021 - 2022</span><strong>Product Manager, Sezzle</strong></li>
+          <li><span>2021</span><strong>NewDay USA / Nokia R&D</strong></li>
+          <li><span>2016 - 2019</span><strong>Systems Engineer, TCS</strong></li>
         </ol>
       </section>
 
-      <section class="skill-cloud" aria-label="Skills and tools" data-reveal>
-        <span>LLM Apps</span>
-        <span>Strategy</span>
-        <span>Roadmaps</span>
-        <span>Discovery</span>
-        <span>PRDs</span>
-        <span>GTM</span>
-        <span>KPIs & OKRs</span>
-        <span>Credit Products</span>
-        <span>API Platforms</span>
-        <span>BNPL</span>
-        <span>RAG</span>
-        <span>Eval Design</span>
-        <span>SQL</span>
-        <span>Snowflake</span>
-        <span>Python</span>
-        <span>Figma</span>
-      </section>
-
-      <section class="contact" id="contact" aria-labelledby="contact-title">
-        <div data-reveal>
-          <p class="section-kicker">Next signal</p>
-          <h2 id="contact-title">Looking for a product leader who can ship through ambiguity, regulation, and scale?</h2>
+      <section class="scene graph-scene" id="contact" aria-labelledby="contact-title">
+        <div class="graph-copy" data-reveal>
+          <p class="muted-label">Contact on product graph</p>
+          <h2 id="contact-title">Let’s build the next launch path.</h2>
+          <p>
+            Best fit: senior product roles where product judgment, regulated execution, FinTech scale,
+            and AI fluency all matter.
+          </p>
+          <div class="contact-actions">
+            <a class="pill-button light magnetic" href="mailto:srivatp1@umbc.edu">srivatp1@umbc.edu</a>
+            <a class="pill-button dark magnetic" href="tel:+14438684756">(443) 868-4756</a>
+          </div>
         </div>
-        <div class="contact-actions" data-reveal>
-          <a class="button primary magnetic" href="mailto:srivatp1@umbc.edu">srivatp1@umbc.edu</a>
-          <a class="button secondary magnetic" href="tel:+14438684756">(443) 868-4756</a>
-          <a class="button secondary magnetic" href="assets/Srivatsava-Pusarla-Resume.pdf" download>Download resume</a>
+        <div class="social-graph" data-reveal aria-hidden="true">
+          <div class="core-logo">SP</div>
+          <article class="person-card card-a"><span></span><strong>Product</strong><p>Strategy</p></article>
+          <article class="person-card card-b"><span></span><strong>FinTech</strong><p>Credit</p></article>
+          <article class="person-card card-c"><span></span><strong>AI</strong><p>Systems</p></article>
+          <article class="person-card card-d"><span></span><strong>Platform</strong><p>APIs</p></article>
+          <article class="person-card card-e"><span></span><strong>Launch</strong><p>GTM</p></article>
         </div>
       </section>
     </main>
