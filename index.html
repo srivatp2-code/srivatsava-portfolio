@@ -13,6 +13,9 @@
   </head>
   <body>
     <canvas id="signal-field" aria-hidden="true"></canvas>
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
     <div class="scanline" aria-hidden="true"></div>
 
     <header class="topbar">
@@ -29,6 +32,45 @@
       <a class="resume-link" href="assets/Srivatsava-Pusarla-Resume.pdf" download>Resume</a>
     </header>
 
+    <aside class="command-dock" aria-label="Quick recruiter actions">
+      <button type="button" data-jump="#systems">
+        <span>01</span>
+        Product proof
+      </button>
+      <button type="button" data-jump="#balance">
+        <span>02</span>
+        Skill mix
+      </button>
+      <button type="button" id="brief-toggle">
+        <span>03</span>
+        Recruiter brief
+      </button>
+    </aside>
+
+    <section class="brief-panel" id="brief-panel" aria-label="Recruiter brief" aria-hidden="true">
+      <button class="brief-close" type="button" aria-label="Close recruiter brief">Close</button>
+      <p class="section-kicker">Recruiter brief</p>
+      <h2>Product-first PM with FinTech scale and AI fluency.</h2>
+      <div class="brief-grid">
+        <article>
+          <span>50%</span>
+          <strong>Product management</strong>
+          <p>Roadmaps, PRDs, GTM, discovery, stakeholder alignment, platform/API requirements.</p>
+        </article>
+        <article>
+          <span>25%</span>
+          <strong>FinTech</strong>
+          <p>BNPL, credit, repayments, investor workflows, asset sales, regulated launch paths.</p>
+        </article>
+        <article>
+          <span>25%</span>
+          <strong>Applied AI</strong>
+          <p>RAG, evals, guardrails, support automation, model-selection tradeoffs.</p>
+        </article>
+      </div>
+      <a class="button primary magnetic" href="mailto:srivatp1@umbc.edu">Start a conversation</a>
+    </section>
+
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy" data-reveal>
@@ -44,6 +86,13 @@
           <div class="hero-actions" aria-label="Primary actions">
             <a class="button primary magnetic" href="mailto:srivatp1@umbc.edu">Talk to me</a>
             <a class="button secondary magnetic" href="#systems">View work</a>
+            <button class="button secondary magnetic" type="button" id="hero-brief-toggle">Open brief</button>
+          </div>
+          <div class="role-strip" aria-label="Core product strengths">
+            <span>Product strategy</span>
+            <span>Roadmap execution</span>
+            <span>API platforms</span>
+            <span>Credit launches</span>
           </div>
         </div>
 
@@ -64,6 +113,9 @@
               <span>AI leverage</span>
               <strong>80% review target</strong>
             </div>
+            <div class="orbit-card orbit-one">Discovery</div>
+            <div class="orbit-card orbit-two">Roadmap</div>
+            <div class="orbit-card orbit-three">GTM</div>
           </div>
         </div>
       </section>
@@ -85,6 +137,33 @@
           <span class="metric-number" data-count="25" data-suffix="+">0</span>
           <p>Engineers coordinated across two teams through prioritization, specs, and stakeholder alignment.</p>
         </article>
+      </section>
+
+      <section class="balance" id="balance" aria-labelledby="balance-title">
+        <div class="section-heading" data-reveal>
+          <p class="section-kicker">Operating mix</p>
+          <h2 id="balance-title">A balanced PM signal, not an AI-only story.</h2>
+        </div>
+        <div class="mix-grid">
+          <article class="mix-card product" data-reveal>
+            <span class="mix-number">50%</span>
+            <h3>Product management</h3>
+            <p>Strategy, discovery, PRDs, roadmaps, launch sequencing, stakeholder alignment, KPIs, and GTM.</p>
+            <div class="mix-bar"><span style="--value: 50%"></span></div>
+          </article>
+          <article class="mix-card fintech" data-reveal>
+            <span class="mix-number">25%</span>
+            <h3>FinTech depth</h3>
+            <p>Credit, BNPL, repayments, investor contracts, asset externalization, and regulated market launch.</p>
+            <div class="mix-bar"><span style="--value: 25%"></span></div>
+          </article>
+          <article class="mix-card ai" data-reveal>
+            <span class="mix-number">25%</span>
+            <h3>Applied AI leverage</h3>
+            <p>RAG workflows, eval harnesses, guardrails, support automation, and model tradeoff decisions.</p>
+            <div class="mix-bar"><span style="--value: 25%"></span></div>
+          </article>
+        </div>
       </section>
 
       <section class="story-band" aria-labelledby="story-title">

@@ -1,6 +1,7 @@
 const canvas = document.querySelector("#signal-field");
 const ctx = canvas.getContext("2d");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const root = document.documentElement;
 
 let width = 0;
 let height = 0;
@@ -77,6 +78,9 @@ resizeCanvas();
 window.addEventListener("resize", resizeCanvas);
 window.addEventListener("pointermove", (event) => {
   pointer = { x: event.clientX, y: event.clientY };
+  document.body.classList.add("has-pointer");
+  root.style.setProperty("--cursor-x", `${event.clientX}px`);
+  root.style.setProperty("--cursor-y", `${event.clientY}px`);
 });
 
 if (!prefersReducedMotion) {
@@ -99,6 +103,16 @@ document.querySelectorAll("[data-reveal]").forEach((element, index) => {
   element.style.transitionDelay = `${Math.min(index * 42, 260)}ms`;
   revealObserver.observe(element);
 });
+
+function updateScrollProgress() {
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollable <= 0 ? 0 : (window.scrollY / scrollable) * 100;
+  root.style.setProperty("--scroll", `${Math.min(100, Math.max(0, progress))}%`);
+  document.body.classList.toggle("is-scrolled", window.scrollY > 160);
+}
+
+updateScrollProgress();
+window.addEventListener("scroll", updateScrollProgress, { passive: true });
 
 const metricObserver = new IntersectionObserver(
   (entries) => {
@@ -131,11 +145,22 @@ function animateMetric(element) {
   requestAnimationFrame(tick);
 }
 
-document.querySelectorAll(".system-card, .lab-panel").forEach((card) => {
+document.querySelectorAll(".system-card, .lab-panel, .mix-card, .metrics article").forEach((card) => {
   card.addEventListener("pointermove", (event) => {
     const rect = card.getBoundingClientRect();
     const x = ((event.clientX - rect.left) / rect.width) * 100;
+    const y = ((event.clientY - rect.top) / rect.height) * 100;
     card.style.setProperty("--shine-x", `${x}%`);
+    card.style.setProperty("--shine-y", `${y}%`);
+    if (!prefersReducedMotion && window.matchMedia("(pointer: fine)").matches) {
+      const rotateX = (50 - y) * 0.08;
+      const rotateY = (x - 50) * 0.08;
+      card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+    }
+  });
+
+  card.addEventListener("pointerleave", () => {
+    card.style.transform = "";
   });
 });
 
@@ -152,3 +177,48 @@ document.querySelectorAll(".magnetic").forEach((button) => {
     button.style.transform = "";
   });
 });
+
+document.querySelectorAll("a, button, .system-card, .lab-panel, .mix-card, .metrics article").forEach((element) => {
+  element.addEventListener("pointerenter", () => document.body.classList.add("is-hovering"));
+  element.addEventListener("pointerleave", () => document.body.classList.remove("is-hovering"));
+});
+
+document.querySelectorAll("[data-jump]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const target = document.querySelector(button.dataset.jump);
+    target?.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth", block: "start" });
+  });
+});
+
+const briefPanel = document.querySelector("#brief-panel");
+const briefButtons = [document.querySelector("#brief-toggle"), document.querySelector("#hero-brief-toggle")].filter(Boolean);
+const briefClose = document.querySelector(".brief-close");
+
+function setBrief(open) {
+  briefPanel?.classList.toggle("is-open", open);
+  briefPanel?.setAttribute("aria-hidden", String(!open));
+}
+
+briefButtons.forEach((button) => button.addEventListener("click", () => setBrief(true)));
+briefClose?.addEventListener("click", () => setBrief(false));
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") setBrief(false);
+});
+
+const heroVisual = document.querySelector(".portrait-stage");
+if (heroVisual) {
+  window.addEventListener(
+    "pointermove",
+    (event) => {
+      if (prefersReducedMotion || !window.matchMedia("(pointer: fine)").matches) return;
+      const x = (event.clientX / window.innerWidth - 0.5) * 18;
+      const y = (event.clientY / window.innerHeight - 0.5) * 18;
+      heroVisual.style.setProperty("--hero-x", `${x}px`);
+      heroVisual.style.setProperty("--hero-y", `${y}px`);
+      heroVisual.querySelectorAll(".hud, .orbit-card").forEach((item, index) => {
+        item.style.translate = `${x * (0.18 + index * 0.04)}px ${y * (0.18 + index * 0.04)}px`;
+      });
+    },
+    { passive: true },
+  );
+}
