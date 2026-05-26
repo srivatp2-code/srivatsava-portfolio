@@ -11,6 +11,9 @@
   --pink: #ec94ad;
   --orange: #ff6a24;
   --mint: #9fe0c0;
+  --glass: rgba(255, 255, 255, 0.075);
+  --glass-strong: rgba(255, 255, 255, 0.13);
+  --glass-border: rgba(255, 255, 255, 0.22);
   --radius: 34px;
   --cursor-x: 50vw;
   --cursor-y: 50vh;
@@ -173,10 +176,11 @@ body.is-hovering .cursor-ring {
 .nav-shell nav {
   gap: clamp(22px, 4vw, 54px);
   padding: 14px 22px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--glass-border);
   border-radius: 999px;
-  background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(16px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.035));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 24px 80px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(22px) saturate(1.25);
   color: rgba(255, 255, 255, 0.78);
   font-size: 1rem;
   font-weight: 650;
@@ -187,9 +191,11 @@ body.is-hovering .cursor-ring {
   min-height: 56px;
   padding: 0 34px;
   border-radius: 999px;
-  background: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.82);
   color: #111;
   font-weight: 900;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 18px 50px rgba(255, 255, 255, 0.14);
 }
 
 .scene {
@@ -360,11 +366,12 @@ body.is-hovering .cursor-ring {
   gap: 14px;
   align-items: center;
   padding: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  border: 1px solid var(--glass-border);
   border-radius: 24px;
-  background: rgba(0, 0, 0, 0.56);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(10, 18, 35, 0.36));
   color: #fff;
-  backdrop-filter: blur(18px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 28px 100px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(24px) saturate(1.28);
 }
 
 .profile-orb img {
@@ -465,11 +472,32 @@ body.is-hovering .cursor-ring {
   width: min(590px, 100%);
   min-height: 620px;
   padding: 72px 44px 44px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--glass-border);
   border-radius: 36px;
-  background: rgba(19, 19, 19, 0.7);
-  box-shadow: 0 40px 110px rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(20px);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.035)),
+    rgba(19, 19, 19, 0.46);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.24),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.06),
+    0 40px 130px rgba(0, 0, 0, 0.58);
+  backdrop-filter: blur(28px) saturate(1.34);
+}
+
+.floating-board::after,
+.glass-card::after,
+.mix-node::after,
+.person-card::after,
+.lab-glass::after {
+  position: absolute;
+  inset: 1px;
+  content: "";
+  pointer-events: none;
+  border-radius: inherit;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent 28%),
+    radial-gradient(circle at 82% 18%, rgba(255, 255, 255, 0.16), transparent 22%);
+  opacity: 0.72;
 }
 
 .window-dots {
@@ -534,6 +562,7 @@ body.is-hovering .cursor-ring {
   font-size: 1.45rem;
   font-weight: 950;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(18px);
 }
 
 .tile-pink { background: var(--pink); }
@@ -565,6 +594,92 @@ body.is-hovering .cursor-ring {
     #000;
 }
 
+.lab-scene {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 5vw;
+  align-items: center;
+  padding: 120px 9vw;
+  background:
+    radial-gradient(circle at 8% 18%, rgba(182, 242, 59, 0.12), transparent 22%),
+    radial-gradient(circle at 92% 52%, rgba(105, 184, 255, 0.26), transparent 30%),
+    #000;
+}
+
+.lab-copy h2 {
+  margin: 30px 0 0;
+  font-size: clamp(3.8rem, 7.7vw, 9.4rem);
+  line-height: 0.95;
+}
+
+.lab-copy p {
+  max-width: 720px;
+  margin: 28px 0 0;
+  color: var(--muted);
+  font-size: clamp(1.1rem, 1.55vw, 1.45rem);
+  line-height: 1.65;
+}
+
+.lab-stack {
+  display: grid;
+  gap: 18px;
+}
+
+.lab-glass {
+  position: relative;
+  overflow: hidden;
+  padding: 30px;
+  border: 1px solid var(--glass-border);
+  border-radius: 32px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.035)),
+    rgba(14, 21, 31, 0.5);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 30px 100px rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(28px) saturate(1.3);
+}
+
+.primary-lab {
+  min-height: 340px;
+  background:
+    radial-gradient(circle at 82% 16%, rgba(182, 242, 59, 0.28), transparent 18rem),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.04)),
+    rgba(14, 21, 31, 0.5);
+}
+
+.lab-glass span,
+.lab-glass a {
+  color: rgba(255, 255, 255, 0.62);
+  font-weight: 760;
+}
+
+.lab-glass h3 {
+  position: relative;
+  z-index: 1;
+  margin: 18px 0 0;
+  font-size: clamp(2rem, 4vw, 4.4rem);
+  line-height: 0.95;
+}
+
+.lab-glass p {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.65;
+}
+
+.lab-glass a {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  margin-top: 18px;
+  padding: 10px 16px;
+  border: 1px solid var(--glass-border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
 .impact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -592,11 +707,14 @@ body.is-hovering .cursor-ring {
 
 .glass-card {
   position: absolute;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
   border-radius: 34px;
-  background: rgba(16, 16, 16, 0.82);
-  box-shadow: 0 38px 120px rgba(0, 0, 0, 0.54);
-  backdrop-filter: blur(18px);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.035)),
+    rgba(16, 16, 16, 0.58);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 38px 120px rgba(0, 0, 0, 0.54);
+  backdrop-filter: blur(28px) saturate(1.25);
 }
 
 .card-main {
@@ -668,10 +786,14 @@ body.is-hovering .cursor-ring {
   position: absolute;
   width: min(300px, 42vw);
   padding: 26px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
   border-radius: 28px;
-  background: rgba(18, 18, 18, 0.88);
-  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.44);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.035)),
+    rgba(18, 18, 18, 0.58);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 28px 90px rgba(0, 0, 0, 0.48);
+  backdrop-filter: blur(26px) saturate(1.25);
 }
 
 .mix-node.product { top: 6%; left: 21%; }
@@ -704,10 +826,11 @@ body.is-hovering .cursor-ring {
 
 .timeline-list li {
   padding: 26px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--glass-border);
   border-radius: 24px;
-  background: rgba(18, 18, 18, 0.8);
-  backdrop-filter: blur(14px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 22px 70px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(22px) saturate(1.25);
 }
 
 .timeline-list span {
@@ -749,9 +872,14 @@ body.is-hovering .cursor-ring {
   position: absolute;
   width: 210px;
   padding: 22px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
   border-radius: 22px;
-  background: rgba(18, 18, 18, 0.88);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.035)),
+    rgba(18, 18, 18, 0.58);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 22px 70px rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(24px) saturate(1.25);
   text-align: center;
 }
 
@@ -861,6 +989,7 @@ body.is-hovering .cursor-ring {
 
   .board-scene,
   .impact-scene,
+  .lab-scene,
   .mix-scene,
   .timeline-scene,
   .graph-scene {
@@ -871,6 +1000,7 @@ body.is-hovering .cursor-ring {
   .center-copy h2,
   .split-copy h2,
   .impact-copy h2,
+  .lab-copy h2,
   .mix-copy h2,
   .graph-copy h2 {
     font-size: clamp(3.6rem, 15vw, 6.4rem);
